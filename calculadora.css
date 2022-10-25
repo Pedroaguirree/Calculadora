@@ -1,0 +1,41 @@
+.container {
+  width: fit-content;
+  background-color: darkslategray;
+  border-radius: 6px;
+}
+
+.buttons {
+  width: 20px;
+  height: 100%;
+  background: burlywood;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+  margin: 5px;
+  cursor: pointer;
+
+  user-select: none;
+}
+
+.buttons:hover {
+  background: rgb(206, 170, 124);
+}
+
+.equal {
+  margin-left: 35px;
+}
+
+.input {
+  width: 100px;
+  margin: 5px;
+
+  text-align: end;
+}
+
+.container-calculator {
+  background-color: darkgray;
+  border-radius: 0 0 6px 6px;
+  width: fit-content;
+}
