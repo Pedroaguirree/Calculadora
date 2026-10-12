@@ -1,51 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="./calculadora.css"
-      media="screen"
-    />
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="./calculadora.css" />
   </head>
   <body>
-    <div class="container">
-      <input class="input" id="input" />
-      <div class="container-calculator">
-        <div>
-          <div style="justify-content: end; display: flex">
-            <div class="buttons">C</div>
-            <div class="buttons" onClick="buttonOperators('plus');">+</div>
-          </div>
-          <div style="justify-content: end; display: flex">
-            <div class="buttons" onClick="buttonProduct('7');">7</div>
-            <div class="buttons" onClick="buttonProduct('8');">8</div>
-            <div class="buttons" onClick="buttonProduct('9');">9</div>
-            <div class="buttons" onClick="buttonOperators('sub');">-</div>
-          </div>
-          <div style="justify-content: end; display: flex">
-            <div class="buttons" onClick="buttonProduct('4');">4</div>
-            <div class="buttons" onClick="buttonProduct('5');">5</div>
-            <div class="buttons" onClick="buttonProduct('6');">6</div>
-            <div class="buttons" onClick="buttonOperators('divider');">/</div>
-          </div>
-          <div style="justify-content: end; display: flex">
-            <div class="buttons" onClick="buttonProduct('1');">1</div>
-            <div class="buttons" onClick="buttonProduct('2');">2</div>
-            <div class="buttons" onClick="buttonProduct('3');">3</div>
-            <div class="buttons" onClick="buttonOperators('multiply');">x</div>
-          </div>
-          <div style="justify-content: end; display: flex">
-            <div class="buttons" onClick="buttonProduct('0');">0</div>
-            <div class="buttons equal" onClick="equal();">=</div>
-          </div>
-        </div>
+    <main class="container" aria-label="Calculadora">
+      <output class="display" id="display">
+        <span class="expressao" id="expressao"></span>
+        <span class="resultado" id="resultado" aria-live="polite">0</span>
+      </output>
+
+      <div class="container-calculator" id="teclado">
+        <button type="button" class="buttons" data-acao="limpar" aria-label="Limpar tudo">C</button>
+        <button type="button" class="buttons" data-acao="apagar" aria-label="Apagar">⌫</button>
+        <button type="button" class="buttons" data-acao="porcentagem" aria-label="Porcentagem">%</button>
+        <button type="button" class="buttons operator" data-op="+" aria-label="Somar">+</button>
+
+        <button type="button" class="buttons" data-num="7">7</button>
+        <button type="button" class="buttons" data-num="8">8</button>
+        <button type="button" class="buttons" data-num="9">9</button>
+        <button type="button" class="buttons operator" data-op="-" aria-label="Subtrair">−</button>
+
+        <button type="button" class="buttons" data-num="4">4</button>
+        <button type="button" class="buttons" data-num="5">5</button>
+        <button type="button" class="buttons" data-num="6">6</button>
+        <button type="button" class="buttons operator" data-op="/" aria-label="Dividir">÷</button>
+
+        <button type="button" class="buttons" data-num="1">1</button>
+        <button type="button" class="buttons" data-num="2">2</button>
+        <button type="button" class="buttons" data-num="3">3</button>
+        <button type="button" class="buttons operator" data-op="*" aria-label="Multiplicar">×</button>
+
+        <button type="button" class="buttons" data-acao="sinal" aria-label="Trocar sinal">±</button>
+        <button type="button" class="buttons" data-num="0">0</button>
+        <button type="button" class="buttons" data-acao="decimal" aria-label="Vírgula">,</button>
+        <button type="button" class="buttons equal" data-acao="igual" aria-label="Igual">=</button>
       </div>
-    </div>
+    </main>
+
+    <script src="./calculadora.js"></script>
   </body>
-  <script src="./calculadora.js"></script>
 </html>

@@ -1,21 +1,92 @@
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .container {
   width: fit-content;
   background-color: darkslategray;
   border-radius: 6px;
 }
 
-.buttons {
-  width: 20px;
-  height: 100%;
-  background: burlywood;
-  border-radius: 5px;
-  align-items: center;
-  justify-content: center;
+.display {
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 156px;
+  margin: 0;
+  padding: 6px;
+  box-sizing: content-box;
+}
 
-  margin: 5px;
+.expressao,
+.resultado {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 6px;
+  background: white;
+  text-align: end;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.expressao {
+  min-height: 16px;
+  padding-top: 3px;
+  border-radius: 3px 3px 0 0;
+  font-size: 11px;
+  color: gray;
+  text-overflow: ellipsis;
+  direction: rtl; /* se a conta for longa, esconde o começo e não o fim */
+  unicode-bidi: plaintext;
+}
+
+.resultado {
+  height: 28px;
+  line-height: 28px;
+  padding-bottom: 2px;
+  border-radius: 0 0 3px 3px;
+  font-size: 20px;
+}
+
+.resultado.medio {
+  font-size: 15px;
+}
+
+.resultado.pequeno {
+  font-size: 12px;
+}
+
+.resultado.erro {
+  font-size: 11px;
+  color: firebrick;
+}
+
+.resultado.previa {
+  color: gray;
+}
+
+.container-calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 34px);
+  gap: 6px;
+  padding: 8px;
+  background-color: darkgray;
+  border-radius: 0 0 6px 6px;
+}
+
+.buttons {
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+  background: burlywood;
+  font: inherit;
+  font-size: 15px;
+  color: black;
   cursor: pointer;
-
   user-select: none;
 }
 
@@ -23,19 +94,16 @@
   background: rgb(206, 170, 124);
 }
 
-.equal {
-  margin-left: 35px;
+.buttons:active,
+.buttons.pressionada {
+  background: rgb(190, 152, 105);
 }
 
-.input {
-  width: 100px;
-  margin: 5px;
-
-  text-align: end;
+.buttons:focus-visible {
+  outline: 2px solid darkslategray;
+  outline-offset: 1px;
 }
 
-.container-calculator {
-  background-color: darkgray;
-  border-radius: 0 0 6px 6px;
-  width: fit-content;
+.operator.ativo {
+  background: rgb(240, 214, 175);
 }
